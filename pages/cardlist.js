@@ -1,6 +1,6 @@
 import Card from './card'
 
-const CardList = ({ robots, searchField }) => {
+const CardList = ({ robots }) => {
     return (
         <div>
             {

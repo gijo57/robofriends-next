@@ -10,7 +10,6 @@ export default function Home({ robots }) {
   const [filteredRobots, setFilteredRobots] = useState(robots)
 
   const onSearchChange = (event) => {
-    //setSearchField(event.target.value)
     setFilteredRobots(robots.filter(r => r.name.toLowerCase().includes(event.target.value.toLowerCase())))
   }
 
