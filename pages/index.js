@@ -7,8 +7,11 @@ import 'tachyons'
 
 export default function Home({ robots }) {
   const [searchField, setSearchField] = useState('')
+  const [filteredRobots, setFilteredRobots] = useState(robots)
+
   const onSearchChange = (event) => {
-    setSearchField(event.target.value)
+    //setSearchField(event.target.value)
+    setFilteredRobots(robots.filter(r => r.name.toLowerCase().includes(event.target.value.toLowerCase())))
   }
 
   return (
@@ -16,7 +19,7 @@ export default function Home({ robots }) {
       <h1 className='f1'>RoboFriends</h1>
       <SearchBox change={onSearchChange} />
       <Scroll>
-        <CardList robots={robots} searchField={searchField} />
+        <CardList robots={filteredRobots} />
       </Scroll>
     </div>
   )

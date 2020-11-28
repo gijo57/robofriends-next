@@ -4,7 +4,7 @@ const CardList = ({ robots, searchField }) => {
     return (
         <div>
             {
-                robots.filter(r => r.name.toLowerCase().includes(searchField.toLowerCase())).map((user, i) => {
+                robots.map((user, i) => {
                     return (
                         <Card 
                         key={i} 
